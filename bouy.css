@@ -1,0 +1,42 @@
+.Bouy-Wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.Bouy-Wrapper .Bouy {
+  visibility: hidden;
+  position: absolute;
+  width: auto;
+  top: -7px;
+  left: 0;
+  opacity: 0;
+  color: #0c61fc;
+  font-size: .8em;
+  font-weight: bold;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.15s linear, opacity 0.1s linear, visibility 0.1s linear;
+  -moz-transition: transform 0.15s linear,         opacity 0.1s linear, visibility 0.1s linear;
+  -o-transition: transform 0.15s linear,         opacity 0.1s linear, visibility 0.1s linear;
+  transition: transform 0.15s linear,         opacity 0.1s linear, visibility 0.1s linear;
+}
+.Bouy-Wrapper.Bouy-Required .Bouy {
+  color: red;
+}
+.Bouy-Wrapper.Bouy-Active .Bouy {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(0, -1em);
+  -moz-transform: translate(0, -1em);
+  -o-transform: translate(0, -1em);
+  -ms-transform: translate(0, -1em);
+  transform: translate(0, -1em);
+  -webkit-transition: -webkit-transform 0.1s linear, opacity 0.12s linear, visibility 0.12 linear;
+  -moz-transition: transform 0.1s linear,         opacity 0.12s linear, visibility 0.12 linear;
+  -o-transition: transform 0.1s linear,         opacity 0.12s linear, visibility 0.12 linear;
+  transition: transform 0.1s linear,         opacity 0.12s linear, visibility 0.12 linear;
+}

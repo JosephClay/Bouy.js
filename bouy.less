@@ -1,0 +1,63 @@
+.Translate(@x: 0, @y: 0) {
+	-webkit-transform: translate(@x, @y);
+	   -moz-transform: translate(@x, @y);
+	     -o-transform: translate(@x, @y);
+	    -ms-transform: translate(@x, @y);
+	        transform: translate(@x, @y);
+}
+
+.InTransition() {
+  -webkit-transition: -webkit-transform 0.1s linear, opacity 0.12s linear, visibility 0.12 linear;
+     -moz-transition: transform 0.1s linear,         opacity 0.12s linear, visibility 0.12 linear;
+       -o-transition: transform 0.1s linear,         opacity 0.12s linear, visibility 0.12 linear;
+          transition: transform 0.1s linear,         opacity 0.12s linear, visibility 0.12 linear;
+}
+.OutTransition() {
+  -webkit-transition: -webkit-transform 0.15s linear, opacity 0.1s linear, visibility 0.1s linear;
+     -moz-transition: transform 0.15s linear,         opacity 0.1s linear, visibility 0.1s linear;
+       -o-transition: transform 0.15s linear,         opacity 0.1s linear, visibility 0.1s linear;
+          transition: transform 0.15s linear,         opacity 0.1s linear, visibility 0.1s linear;
+}
+
+.Bouy-Wrapper {
+	position: relative;
+	margin: 0;
+	padding: 0;
+
+	.Bouy {
+		visibility: hidden;
+		position: absolute;
+		
+		width: auto;
+		
+		top: -7px;
+		left: 0;
+		
+		opacity: 0;
+
+		color: #0c61fc;
+		font-size: .8em;
+		font-weight: bold;
+		
+		.Translate();
+		.OutTransition();
+	}
+	
+	&.Bouy-Required {
+		.Bouy {
+			color: red;
+		}
+	}
+
+	&.Bouy-Active {
+		.Bouy {
+			display: block;
+			visibility: visible;
+
+			opacity: 1;
+
+			.Translate(0, -1em);
+			.InTransition();
+		}
+	}
+}
